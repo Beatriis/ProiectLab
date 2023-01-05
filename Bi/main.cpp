@@ -39,7 +39,7 @@ int getBusses (int choise){
     else 
         return (868/50 + 1) * 5680 * 2; 
 }
-/*
+
 void generateMonsters(int n){
 
     Monster* monsters[n];
@@ -113,7 +113,8 @@ void generateMenu(){
     mainFlex.close();
     menu.close();
 }
-*/
+
+/*
 int numberOfActorss(){
     newCastFile.open("CastFinal.csv", ios::in | ios::out | ios::binary | ios::app);
 
@@ -156,10 +157,10 @@ double leiToDollars(int lei){
     double dollars = lei / 4.68;
     return dollars;
 }
-
+*/
 int main(){
     
-    file.open("CastInitial.csv", ios::in | ios::out | ios::binary | ios::app);
+    file.open("CastInitial.csv", ios::in);
     newCastFile.open("CastFinal.csv", ios::in | ios::out | ios::binary | ios::app);
     namesFile.open("Names.txt");
     rolesFile.open("Roles.txt");
@@ -174,11 +175,9 @@ int main(){
         stringstream ss(line);
         getline(ss, rname, ',');
         getline(ss, rfunction, ',');
-        //cout <<  persoane[i].function << "\n";
-        cout << rfunction;
+    
 
-        if ( string(rfunction) == string("actor/actress") ){
-            cout << "ok" << "\n";
+        if ( rfunction == "actor/actress" ){
             persoane[n].name = rname;
             persoane[n].function = rfunction;
             newCastFile << persoane[n].name << "," << persoane[n].function << "\n";
