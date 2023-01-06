@@ -1,4 +1,4 @@
-int getDiet(){///trb pointer??
+int getDiet(){
     //1 mananca orice, 2 vegetarian, 3 flexitarian
     int random = rand() % 3;
     if (random == 0)
@@ -20,7 +20,7 @@ class Monster {
 
         void getDetails(){
 
-            cout << "\n" << "Numele actorului: " << name << ", rolul: " << role << ", dieta: " << diet << ",pretul machiajului pe zi: " << makeupPrice << "\n\n";
+            cout << "\n" << "Numele actorului: " << name << ", rolul: " << role << ", dieta: " << diet << ", pretul machiajului pe zi: " << makeupPrice << "\n\n";
         }
 };
 
@@ -83,3 +83,5 @@ class Clairvoyant : public Monster {
             this->diet = getDiet();
         }
 };
+
+//monsters[i]->getDetails();
